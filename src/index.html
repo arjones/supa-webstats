@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+    <script>
+        const __clicked = (url) => {
+            const payload = {
+                destinationUrl: url,
+                originUrl: document.URL,
+                title: document.title
+            }
+
+            const data = fetch('https://mjvnleodkirkszvexzql.functions.supabase.co/clicked', {
+                method: 'post',
+                body: JSON.stringify(payload),
+                mode: "cors",
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                // console.log({ data })
+                return data
+            });
+
+            console.log({ payload, data })
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <h1><a href="#abc" onclick="__clicked(this.href)">#abc</a></h1>
+    <h1><a href="https://twitter.com/arjones" onclick="__clicked(this.href)">@arjones</a></h1>
+    <h1><a href="https://arjon.es" onclick="__clicked(this.href)">Blog</a></h1>
+    <h1><a href="https://google.com" onclick="__clicked(this.href)">Google</a></h1>
+
+</body>
+
+</html>
