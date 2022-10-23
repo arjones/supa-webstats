@@ -8,6 +8,33 @@
     <title>Test</title>
 
     <script>
+        const _track = async () => {
+            const url = event.srcElement.href;
+            event.preventDefault();
+            
+            try {
+                const payload = {
+                    destinationUrl: url,
+                    originUrl: document.URL,
+                    title: document.title
+                }
+
+                const data = await fetch('https://mjvnleodkirkszvexzql.functions.supabase.co/clicked', {
+                    method: 'post',
+                    body: JSON.stringify(payload),
+                    mode: "cors",
+                })
+                console.log({ data })
+
+            } catch (error) {
+                console.error(error);
+
+            } finally {
+                document.location = url;
+            }
+
+        }
+
         const __clicked = (url) => {
             const payload = {
                 destinationUrl: url,
@@ -34,10 +61,11 @@
 </head>
 
 <body>
-    <h1><a href="#abc" onclick="__clicked(this.href)">#abc</a></h1>
-    <h1><a href="https://twitter.com/arjones" onclick="__clicked(this.href)">@arjones</a></h1>
-    <h1><a href="https://arjon.es" onclick="__clicked(this.href)">Blog</a></h1>
-    <h1><a href="https://google.com" onclick="__clicked(this.href)">Google</a></h1>
+    <h1><a href="#header" onclick="_track()">_track</a></h1>
+    <h1><a href="#abc" onclick="_track()">#abc</a></h1>
+    <h1><a href="https://twitter.com/arjones" onclick="_track()">@arjones</a></h1>
+    <h1><a href="https://arjon.es" onclick="_track()">Blog</a></h1>
+    <h1><a href="https://google.com" onclick="_track()">Google</a></h1>
 
 </body>
 
