@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Test Page - Contém Caracteres Especiais 🤩😅 - Ñçè</title>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const BASE_URL = "https://mjvnleodkirkszvexzql.functions.supabase.co/c";
+            const title = encodeURIComponent(document.title);
+
+            const elem = document.createElement("img");
+            elem.src = `${BASE_URL}?u=${document.URL}&ti=${title}&t=v`;
+            document.body.insertAdjacentElement('beforeend', elem);
+
+            for (let elem of document.getElementsByTagName("a")) {
+                const targetUrl = encodeURIComponent(elem.href)
+                const newUrl = `${BASE_URL}?u=${targetUrl}&ti=${title}&t=c`;
+                elem.href = newUrl;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1><a href="#header">same page</a></h1>
+    <h1><a href="http://example.com/#abc">example #abc</a></h1>
+    <h1><a href="https://twitter.com/arjones">@arjones</a></h1>
+    <h1><a href="https://arjon.es">Blog</a></h1>
+    <h1><a href="https://google.com">Google</a></h1>
+</body>
+
+
+<!-- script>
+    (() => {
+        for (let elem of document.getElementsByTagName("a")) {
+            const title = encodeURIComponent(document.title);
+            const targetUrl = encodeURIComponent(elem.href)
+            const newUrl = `https://mjvnleodkirkszvexzql.functions.supabase.co/c?u=${targetUrl}&ti=${title}&t=c`;
+
+            console.log(elem.href, newUrl);
+            elem.href = newUrl;
+        }
+
+        console.log('INITIALIZED')
+    })();
+</script  -->
+
+</html>

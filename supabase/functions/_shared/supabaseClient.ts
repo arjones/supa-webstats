@@ -1,6 +1,6 @@
 // https://github.com/supabase/supabase/blob/master/examples/edge-functions/supabase/functions/_shared/supabaseClient.ts
 
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.0.0";
+import { createClient, User } from "https://esm.sh/@supabase/supabase-js@2";
 
 export const supabaseClient = (req: Request) =>
   createClient(
@@ -14,3 +14,8 @@ export const supabaseClient = (req: Request) =>
       global: { headers: { Authorization: req.headers.get("Authorization")! } },
     },
   );
+
+export const getCurrentUser = async (req: Request): Promise<User | null> => {
+  const { data: user } = await supabaseClient(req).auth.getUser();
+  return user.user;
+};
