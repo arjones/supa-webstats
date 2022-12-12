@@ -6,6 +6,7 @@ serve(async (req) => {
   // If link fails redirect to my homepage
   const targetUrl = url.searchParams.get("u") || "https://arjon.es/links";
   const title = url.searchParams.get("ti") || "Untitled";
+  // default to event type = view
   const type = url.searchParams.get("t") || "v";
 
   const metadata = {
@@ -25,8 +26,8 @@ serve(async (req) => {
 
   console.log({ data, error });
 
+  // If event type is VIEW send a transparent PNG
   if (type === "v") {
-    console.log('Response transparent PNG');
     return new Response(transparentPNG());
   }
 
