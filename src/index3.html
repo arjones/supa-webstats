@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gustavo Arjones</title>
+    <meta name="description" content="A collection of links for my relevant work, including Talks, Articles, and Social Media.">
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const BASE_URL = "https://mjvnleodkirkszvexzql.functions.supabase.co/c";
+            const title = encodeURIComponent(document.title);
+
+            const elem = document.createElement("img");
+            elem.src = `${BASE_URL}?u=${document.URL}&ti=${title}&t=v`;
+            document.body.insertAdjacentElement('beforeend', elem);
+
+            for (let elem of document.getElementsByTagName("a")) {
+                const targetUrl = encodeURIComponent(elem.href)
+                const newUrl = `${BASE_URL}?u=${targetUrl}&ti=${title}&t=c`;
+                elem.href = newUrl;
+            }
+        });
+    </script>
+
+    <meta property="og:url" content="https://arjon.es/links/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gustavo Arjones">
+    <meta property="og:description" content="A collection of links for my relevant work, including Talks, Articles, and Social Media.">
+    <meta property="og:image" content="https://arjon.es/images/gustavo_arjones_cover.jpg">
+
+    <meta property="twitter:card" name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" name="twitter:domain" content="arjon.es">
+    <meta property="twitter:site" name="twitter:site" content="@arjones"/>
+    <meta property="twitter:url" name="twitter:url" content="https://www.arjon.es/links/">
+    <meta property="twitter:title" name="twitter:title" content="Gustavo Arjones">
+    <meta property="twitter:description" name="twitter:description" content="A collection of links for my relevant work, including Talks, Articles, and Social Media.">
+    <meta property="twitter:image" name="twitter:image" content="https://arjon.es/images/gustavo_arjones_cover.jpg">
+
+    <link rel="icon" href="https://arjon.es/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://arjon.es/images/favicon.ico">
+    <link rel="apple-touch-icon" href="https://arjon.es/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 0.95em;
+        }
+
+        h1 {
+            display: block;
+            font-size: 2em;
+            margin-block-start: 0.67em;
+            margin-block-end: 0.67em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        img {
+            border-radius: 9999px;
+            height: 128px;
+            width: 128px;
+        }
+
+        .title {
+            color: #4a4a4a;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.125;
+            word-break: break-word;
+        }
+
+        .subtitle {
+            color: #4a4a4a;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.25;
+            margin-top: 2.0rem;
+        }
+
+        .container {
+            height: 360px;
+            text-align: center;
+            display: block;
+        }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+
+            color: #B8B4B0;
+        }
+
+        .fa:hover {
+            opacity: 0.5;
+        }
+
+        .button {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 5px;
+            color: #4a4a4a;
+            /* color: #B8B4B0; */
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            background-color: #FFF;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #B8B4B0;
+            border-radius: 6px;
+            text-decoration: none;
+
+
+        }
+
+        .button:hover {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Gustavo Arjones</h1>
+
+        <div><img class="image" src="https://www.gravatar.com/avatar/2e02f3f275340b8790d48c8bed682608?s=512"
+                alt="Gustavo Arjones profile pic"></div>
+
+        <div>
+            <a href="https://twitter.com/arjones" target="_blank" class="fa fa-twitter"></a>
+            <a href="https://www.linkedin.com/in/arjones/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://github.com/arjones" target="_blank" class="fa fa-github"></a>
+            <a href="https://arjon.es/" target="_blank" class="fa fa-globe"></a>
+        </div>
+
+        <div>
+            <h2 class="subtitle">Talks & Interviews</a></h2>
+
+            <a href="https://www.ted.com/talks/gustavo_arjones_big_data_e_inteligencia_artificial_son_el_futuro_jan_2018"
+                target="_blank" class="button">TEDx<br />Big Data & AI ¿Son el futuro?</a><br />
+            <a href="https://www.youtube.com/watch?v=WTQ22Q1nZio" target="_blank" class="button">Fintech
+                Americas<br />La banca abierta en América Latina</a><br />
+            <a href="https://www.youtube.com/watch?v=ElpWlj6yi44" target="_blank" class="button">AWS re:Invent
+                2014<br />Real-World Real-Time Analytics</a><br />
+            <a href="https://www.youtube.com/watch?v=C6I9cIxsiBk" target="_blank" class="button">Amigos de la Univ. de
+                Tel Aviv<br />Desmitificando Inteligencia Artificial</a><br />
+            <a href="https://www.youtube.com/watch?v=q93vmO47iJ0" target="_blank" class="button">Nerdear.la<br />Journey
+                to Stability</a><br />
+            <a href="https://www.youtube.com/watch?v=zntKP0h1luQ" target="_blank" class="button">ArqConf For
+                IT<br />Arquitectura para Big Data Analytics</a><br />
+        </div>
+
+        <div>
+            <h2 class="subtitle">Articles</a></h2>
+
+            <a href="https://www.iproup.com/economia-digital/22381-podrian-las-fintechs-ser-las-nuevas-super-apps"
+                target="_blank" class="button">iProUP<br />¿Podrían las fintechs ser las nuevas Super Apps?</a><br />
+            <a href="https://tn.com.ar/opinion/inteligencia-artificial-para-crear-mejores-productos_1090959/"
+                target="_blank" class="button">TN - Todo Noticias<br />Inteligencia artificial para crear mejores
+                productos</a><br />
+        </div>
+
+    </div>
+</body>
+
+</html>
